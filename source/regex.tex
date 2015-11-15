@@ -370,80 +370,80 @@ namespace std {
         typename iterator_traits<BiIter>::value_type, ST, SA>& rhs);
 
   template <class BiIter> 
-    bool operator==(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator==(const typename iterator_traits<BiIter>::value_type* lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator!=(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator!=(const typename iterator_traits<BiIter>::value_type* lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator<(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator<(const typename iterator_traits<BiIter>::value_type* lhs, 
                    const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator>(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator>(const typename iterator_traits<BiIter>::value_type* lhs, 
                    const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator>=(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator>=(const typename iterator_traits<BiIter>::value_type* lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator<=(typename iterator_traits<BiIter>::value_type const* lhs, 
+    bool operator<=(const typename iterator_traits<BiIter>::value_type* lhs, 
                     const sub_match<BiIter>& rhs); 
 
   template <class BiIter> 
     bool operator==(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const* rhs); 
+                    const typename iterator_traits<BiIter>::value_type* rhs); 
   template <class BiIter> 
     bool operator!=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const* rhs); 
+                    const typename iterator_traits<BiIter>::value_type* rhs); 
   template <class BiIter> 
     bool operator<(const sub_match<BiIter>& lhs, 
-                   typename iterator_traits<BiIter>::value_type const* rhs); 
+                   const typename iterator_traits<BiIter>::value_type* rhs); 
   template <class BiIter> 
     bool operator>(const sub_match<BiIter>& lhs, 
-                   typename iterator_traits<BiIter>::value_type const* rhs); 
+                   const typename iterator_traits<BiIter>::value_type* rhs); 
   template <class BiIter> 
     bool operator>=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const* rhs); 
+                    const typename iterator_traits<BiIter>::value_type* rhs); 
   template <class BiIter> 
     bool operator<=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const* rhs); 
+                    const typename iterator_traits<BiIter>::value_type* rhs); 
 
   template <class BiIter> 
-    bool operator==(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator==(const typename iterator_traits<BiIter>::value_type& lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator!=(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator!=(const typename iterator_traits<BiIter>::value_type& lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator<(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator<(const typename iterator_traits<BiIter>::value_type& lhs, 
                    const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator>(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator>(const typename iterator_traits<BiIter>::value_type& lhs, 
                    const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator>=(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator>=(const typename iterator_traits<BiIter>::value_type& lhs, 
                     const sub_match<BiIter>& rhs); 
   template <class BiIter> 
-    bool operator<=(typename iterator_traits<BiIter>::value_type const& lhs, 
+    bool operator<=(const typename iterator_traits<BiIter>::value_type& lhs, 
                     const sub_match<BiIter>& rhs); 
 
   template <class BiIter> 
     bool operator==(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const& rhs); 
+                    const typename iterator_traits<BiIter>::value_type& rhs); 
   template <class BiIter> 
     bool operator!=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const& rhs); 
+                    const typename iterator_traits<BiIter>::value_type& rhs); 
   template <class BiIter> 
     bool operator<(const sub_match<BiIter>& lhs, 
-                   typename iterator_traits<BiIter>::value_type const& rhs); 
+                   const typename iterator_traits<BiIter>::value_type& rhs); 
   template <class BiIter> 
     bool operator>(const sub_match<BiIter>& lhs, 
-                   typename iterator_traits<BiIter>::value_type const& rhs); 
+                   const typename iterator_traits<BiIter>::value_type& rhs); 
   template <class BiIter> 
     bool operator>=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const& rhs); 
+                    const typename iterator_traits<BiIter>::value_type& rhs); 
   template <class BiIter> 
     bool operator<=(const sub_match<BiIter>& lhs, 
-                    typename iterator_traits<BiIter>::value_type const& rhs); 
+                    const typename iterator_traits<BiIter>::value_type& rhs); 
 
   template <class charT, class ST, class BiIter>
     basic_ostream<charT, ST>&
@@ -2229,7 +2229,7 @@ template <class BiIter, class ST, class SA>
 \indexlibrary{\idxcode{operator==}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator==(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator==(const typename iterator_traits<BiIter>::value_type* lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2241,7 +2241,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator"!=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator!=(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator!=(const typename iterator_traits<BiIter>::value_type* lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2253,7 +2253,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator<}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator<(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator<(const typename iterator_traits<BiIter>::value_type* lhs, 
                  const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2265,7 +2265,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator>}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator>(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator>(const typename iterator_traits<BiIter>::value_type* lhs, 
                  const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2277,7 +2277,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator>=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator>=(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator>=(const typename iterator_traits<BiIter>::value_type* lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2289,7 +2289,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator<=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator<=(typename iterator_traits<BiIter>::value_type const* lhs, 
+  bool operator<=(const typename iterator_traits<BiIter>::value_type* lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2302,7 +2302,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator==(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const* rhs);
+                  const typename iterator_traits<BiIter>::value_type* rhs);
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2314,7 +2314,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator!=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const* rhs); 
+                  const typename iterator_traits<BiIter>::value_type* rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2326,7 +2326,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator<(const sub_match<BiIter>& lhs, 
-                 typename iterator_traits<BiIter>::value_type const* rhs); 
+                 const typename iterator_traits<BiIter>::value_type* rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2338,7 +2338,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator>(const sub_match<BiIter>& lhs, 
-                 typename iterator_traits<BiIter>::value_type const* rhs); 
+                 const typename iterator_traits<BiIter>::value_type* rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2350,7 +2350,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator>=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const* rhs); 
+                  const typename iterator_traits<BiIter>::value_type* rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2362,7 +2362,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator<=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const* rhs); 
+                  const typename iterator_traits<BiIter>::value_type* rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2374,7 +2374,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator==}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator==(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator==(const typename iterator_traits<BiIter>::value_type& lhs, 
                   const sub_match<BiIter>& rhs);
 \end{itemdecl}
 
@@ -2387,7 +2387,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator"!=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator!=(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator!=(const typename iterator_traits<BiIter>::value_type& lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2400,7 +2400,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator<}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator<(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator<(const typename iterator_traits<BiIter>::value_type& lhs, 
                  const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2413,7 +2413,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator>}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator>(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator>(const typename iterator_traits<BiIter>::value_type& lhs, 
                  const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2426,7 +2426,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator>=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator>=(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator>=(const typename iterator_traits<BiIter>::value_type& lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2439,7 +2439,7 @@ template <class BiIter>
 \indexlibrary{\idxcode{operator<=}!\idxcode{sub_match}}%
 \begin{itemdecl}
 template <class BiIter> 
-  bool operator<=(typename iterator_traits<BiIter>::value_type const& lhs, 
+  bool operator<=(const typename iterator_traits<BiIter>::value_type& lhs, 
                   const sub_match<BiIter>& rhs); 
 \end{itemdecl}
 
@@ -2453,7 +2453,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator==(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const& rhs); 
+                  const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2466,7 +2466,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator!=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const& rhs); 
+                  const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2479,7 +2479,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator<(const sub_match<BiIter>& lhs, 
-                 typename iterator_traits<BiIter>::value_type const& rhs); 
+                 const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2492,7 +2492,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator>(const sub_match<BiIter>& lhs, 
-                 typename iterator_traits<BiIter>::value_type const& rhs); 
+                 const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2505,7 +2505,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator>=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const& rhs); 
+                  const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -2518,7 +2518,7 @@ template <class BiIter>
 \begin{itemdecl}
 template <class BiIter> 
   bool operator<=(const sub_match<BiIter>& lhs, 
-                  typename iterator_traits<BiIter>::value_type const& rhs); 
+                  const typename iterator_traits<BiIter>::value_type& rhs); 
 \end{itemdecl}
 
 \begin{itemdescr}

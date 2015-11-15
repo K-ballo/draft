@@ -1779,7 +1779,7 @@ template <size_t I, class... Types>
 template <size_t I, class... Types>
   constexpr tuple_element_t<I, tuple<Types...> >&& get(tuple<Types...>&& t) noexcept; // Note A
 template <size_t I, class... Types>
-  constexpr tuple_element_t<I, tuple<Types...> > const& get(const tuple<Types...>& t) noexcept; // Note B
+  constexpr const tuple_element_t<I, tuple<Types...> >& get(const tuple<Types...>& t) noexcept; // Note B
 template <size_t I, class... Types>
   constexpr const tuple_element_t<I, tuple<Types...> >&& get(const tuple<Types...>&& t) noexcept; 
 \end{itemdecl}
@@ -3074,17 +3074,17 @@ namespace std {
 
   // \ref{util.smartptr.shared.cmp}, shared_ptr comparisons:
   template<class T, class U>
-    bool operator==(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator==(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
   template<class T, class U>
-    bool operator!=(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator!=(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
   template<class T, class U>
-    bool operator<(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator<(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
   template<class T, class U>
-    bool operator>(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator>(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
   template<class T, class U>
-    bool operator<=(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator<=(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
   template<class T, class U>
-    bool operator>=(shared_ptr<T> const& a, shared_ptr<U> const& b) noexcept;
+    bool operator>=(const shared_ptr<T>& a, const shared_ptr<U>& b) noexcept;
 
   template <class T>
     bool operator==(const shared_ptr<T>& x, nullptr_t) noexcept;
@@ -3116,18 +3116,18 @@ namespace std {
 
   // \ref{util.smartptr.shared.cast}, shared_ptr casts:
   template<class T, class U>
-    shared_ptr<T> static_pointer_cast(shared_ptr<U> const& r) noexcept;
+    shared_ptr<T> static_pointer_cast(const shared_ptr<U>& r) noexcept;
   template<class T, class U>
-    shared_ptr<T> dynamic_pointer_cast(shared_ptr<U> const& r) noexcept;
+    shared_ptr<T> dynamic_pointer_cast(const shared_ptr<U>& r) noexcept;
   template<class T, class U>
-    shared_ptr<T> const_pointer_cast(shared_ptr<U> const& r) noexcept;
+    shared_ptr<T> const_pointer_cast(const shared_ptr<U>& r) noexcept;
 
   // \ref{util.smartptr.getdeleter}, shared_ptr get_deleter:
-  template<class D, class T> D* get_deleter(shared_ptr<T> const& p) noexcept;
+  template<class D, class T> D* get_deleter(const shared_ptr<T>& p) noexcept;
 
   // \ref{util.smartptr.shared.io}, shared_ptr I/O:
   template<class E, class T, class Y>
-    basic_ostream<E, T>& operator<< (basic_ostream<E, T>& os, shared_ptr<Y> const& p);
+    basic_ostream<E, T>& operator<< (basic_ostream<E, T>& os, const shared_ptr<Y>& p);
 
   // \ref{util.smartptr.weak}, class template weak_ptr:
   template<class T> class weak_ptr;
@@ -5658,8 +5658,8 @@ namespace std {
     long use_count() const noexcept;
     bool unique() const noexcept;
     explicit operator bool() const noexcept;
-    template<class U> bool owner_before(shared_ptr<U> const& b) const;
-    template<class U> bool owner_before(weak_ptr<U> const& b) const;
+    template<class U> bool owner_before(const shared_ptr<U>& b) const;
+    template<class U> bool owner_before(const weak_ptr<U>& b) const;
   };
 
   // \ref{util.smartptr.shared.create}, shared_ptr creation
@@ -6132,8 +6132,8 @@ explicit operator bool() const noexcept;
 \indexlibrary{\idxcode{owner_before}!\idxcode{shared_ptr}}%
 \indexlibrary{\idxcode{shared_ptr}!\idxcode{owner_before}}%
 \begin{itemdecl}
-template<class U> bool owner_before(shared_ptr<U> const& b) const;
-template<class U> bool owner_before(weak_ptr<U> const& b) const;
+template<class U> bool owner_before(const shared_ptr<U>& b) const;
+template<class U> bool owner_before(const weak_ptr<U>& b) const;
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -6438,7 +6438,7 @@ the deleter until all \tcode{weak_ptr} instances that share ownership with
 \indexlibrary{\idxcode{shared_ptr}!\idxcode{operator<<}}%
 \begin{itemdecl}
 template<class E, class T, class Y>
-  basic_ostream<E, T>& operator<< (basic_ostream<E, T>& os, shared_ptr<Y> const& p);
+  basic_ostream<E, T>& operator<< (basic_ostream<E, T>& os, const shared_ptr<Y>& p);
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -6464,9 +6464,9 @@ namespace std {
 
     // \ref{util.smartptr.weak.const}, constructors
     constexpr weak_ptr() noexcept;
-    template<class Y> weak_ptr(shared_ptr<Y> const& r) noexcept;
-    weak_ptr(weak_ptr const& r) noexcept;
-    template<class Y> weak_ptr(weak_ptr<Y> const& r) noexcept;
+    template<class Y> weak_ptr(const shared_ptr<Y>& r) noexcept;
+    weak_ptr(const weak_ptr& r) noexcept;
+    template<class Y> weak_ptr(const weak_ptr<Y>& r) noexcept;
     weak_ptr(weak_ptr&& r) noexcept;
     template<class Y> weak_ptr(weak_ptr<Y>&& r) noexcept;
 
@@ -6474,9 +6474,9 @@ namespace std {
     ~weak_ptr();
 
     // \ref{util.smartptr.weak.assign}, assignment
-    weak_ptr& operator=(weak_ptr const& r) noexcept;
-    template<class Y> weak_ptr& operator=(weak_ptr<Y> const& r) noexcept;
-    template<class Y> weak_ptr& operator=(shared_ptr<Y> const& r) noexcept;
+    weak_ptr& operator=(const weak_ptr& r) noexcept;
+    template<class Y> weak_ptr& operator=(const weak_ptr<Y>& r) noexcept;
+    template<class Y> weak_ptr& operator=(const shared_ptr<Y>& r) noexcept;
     weak_ptr& operator=(weak_ptr&& r) noexcept;
     template<class Y> weak_ptr& operator=(weak_ptr<Y>&& r) noexcept;    
 
@@ -6488,8 +6488,8 @@ namespace std {
     long use_count() const noexcept;
     bool expired() const noexcept;
     shared_ptr<T> lock() const noexcept;
-    template<class U> bool owner_before(shared_ptr<U> const& b) const;
-    template<class U> bool owner_before(weak_ptr<U> const& b) const;
+    template<class U> bool owner_before(const shared_ptr<U>& b) const;
+    template<class U> bool owner_before(const weak_ptr<U>& b) const;
   };
 
   // \ref{util.smartptr.weak.spec}, specialized algorithms
@@ -6652,8 +6652,8 @@ shared_ptr<T> lock() const noexcept;
 \indexlibrary{\idxcode{owner_before}!\idxcode{shared_ptr}}%
 \indexlibrary{\idxcode{shared_ptr}!\idxcode{owner_before}}%
 \begin{itemdecl}
-template<class U> bool owner_before(shared_ptr<U> const& b) const;
-template<class U> bool owner_before(weak_ptr<U> const& b) const;
+template<class U> bool owner_before(const shared_ptr<U>& b) const;
+template<class U> bool owner_before(const weak_ptr<U>& b) const;
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -6697,29 +6697,29 @@ namespace std {
     typedef bool result_type;
     typedef shared_ptr<T> first_argument_type;
     typedef shared_ptr<T> second_argument_type;
-    bool operator()(shared_ptr<T> const&, shared_ptr<T> const&) const;
-    bool operator()(shared_ptr<T> const&, weak_ptr<T> const&) const;
-    bool operator()(weak_ptr<T> const&, shared_ptr<T> const&) const;
+    bool operator()(const shared_ptr<T>&, const shared_ptr<T>&) const;
+    bool operator()(const shared_ptr<T>&, const weak_ptr<T>&) const;
+    bool operator()(const weak_ptr<T>&, const shared_ptr<T>&) const;
   };
 
   template<class T> struct owner_less<weak_ptr<T> > {
     typedef bool result_type;
     typedef weak_ptr<T> first_argument_type;
     typedef weak_ptr<T> second_argument_type;
-    bool operator()(weak_ptr<T> const&, weak_ptr<T> const&) const;
-    bool operator()(shared_ptr<T> const&, weak_ptr<T> const&) const;
-    bool operator()(weak_ptr<T> const&, shared_ptr<T> const&) const;
+    bool operator()(const weak_ptr<T>&, const weak_ptr<T>&) const;
+    bool operator()(const shared_ptr<T>&, const weak_ptr<T>&) const;
+    bool operator()(const weak_ptr<T>&, const shared_ptr<T>&) const;
   };
 
   template<> struct owner_less<void> {
     template<class T, class U>
-      bool operator()(shared_ptr<T> const&, shared_ptr<U> const&) const;
+      bool operator()(const shared_ptr<T>&, const shared_ptr<U>&) const;
     template<class T, class U>
-      bool operator()(shared_ptr<T> const&, weak_ptr<U> const&) const;
+      bool operator()(const shared_ptr<T>&, const weak_ptr<U>&) const;
     template<class T, class U>
-      bool operator()(weak_ptr<T> const&, shared_ptr<U> const&) const;
+      bool operator()(const weak_ptr<T>&, const shared_ptr<U>&) const;
     template<class T, class U>
-      bool operator()(weak_ptr<T> const&, weak_ptr<U> const&) const;
+      bool operator()(const weak_ptr<T>&, const weak_ptr<U>&) const;
 
     typedef @\unspec@ is_transparent;
   };
@@ -6767,8 +6767,8 @@ namespace std {
   template<class T> class enable_shared_from_this {
   protected:
     constexpr enable_shared_from_this() noexcept;
-    enable_shared_from_this(enable_shared_from_this const&) noexcept;
-    enable_shared_from_this& operator=(enable_shared_from_this const&) noexcept;
+    enable_shared_from_this(const enable_shared_from_this&) noexcept;
+    enable_shared_from_this& operator=(const enable_shared_from_this&) noexcept;
     ~enable_shared_from_this();
   public:
     shared_ptr<T> shared_from_this();
@@ -6838,8 +6838,8 @@ private:
   weak_ptr<T> __weak_this;
 protected:
   constexpr enable_shared_from_this() : __weak_this() { }
-  enable_shared_from_this(enable_shared_from_this const &) { }
-  enable_shared_from_this& operator=(enable_shared_from_this const &) { return *this; }
+  enable_shared_from_this(const enable_shared_from_this&) { }
+  enable_shared_from_this& operator=(const enable_shared_from_this&) { return *this; }
   ~enable_shared_from_this() { }
 public:
   shared_ptr<T> shared_from_this() { return shared_ptr<T>(__weak_this); }
